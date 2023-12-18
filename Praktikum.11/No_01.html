@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Penjumlahan</title>
+    <style>
+        fieldset{
+            border: 2px solid ;
+            margin-left: 30cap;
+            margin-right: 30cap;
+            padding-left: 2cap;
+        }
+
+        button{
+            background-color: #1e67a7;
+            color: aliceblue;
+        }
+
+        button:hover{
+            background-color:  #192655;
+        }
+
+        input[type="number"]{
+            background-color: #3876BF;
+            color: white;
+        }
+
+        ::placeholder{
+            color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body>
+<div class="kalku"> 
+    <fieldset>
+    <legend>Kalkulator Penjumlahan </legend>
+    <br>
+
+    <input type="number" id="angka1" placeholder="angka pertama" onchange="hitungPenjumlahan()">
+    <p>+</p>
+    <input type="number" id="angka2" placeholder="angka kedua" onchange="hitungPenjumlahan()">
+    <p>=</p>
+    <button onclick="hitungPenjumlahan()">Hitung</button>
+
+    <p>Hasil: <span id="hasil"></span></p>
+    </fieldset>
+</div>
+
+    <script>
+        function hitungPenjumlahan() {
+            var angka1 = parseFloat(document.getElementById('angka1').value);
+            var angka2 = parseFloat(document.getElementById('angka2').value);
+
+            if (!isNaN(angka1) && !isNaN(angka2)) {
+                var hasil = angka1 + angka2;
+                document.getElementById('hasil').innerText = hasil;
+            }
+        }
+    </script>
+
+</body>
+</html>
